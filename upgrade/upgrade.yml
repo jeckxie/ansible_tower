@@ -1,0 +1,7 @@
+---
+- hosts: all
+  gather_facts: no
+  tasks:
+  - name: fix global.yml then upgrade openstack one or muit server
+    command: sed -i s/{{ fixed_value }}//g;kolla-ansible upgrade
+  

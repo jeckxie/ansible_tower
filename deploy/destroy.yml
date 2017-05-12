@@ -1,0 +1,11 @@
+---
+- hosts: all
+  gather_facts: no
+  tasks:
+  - name: destroy aio not include images
+    command: kolla-ansible destroy --yes
+    when: not include_images
+  - name: destroy aio include images
+    command: kolla-ansible destroy --include-images --yes
+    when: include_images
+  
