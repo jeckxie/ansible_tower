@@ -1,9 +1,11 @@
 ---
 - hosts: all
   gather_facts: no
+#  vars:
+#   enable_central_logging: \"yes\"
   tasks:
   - name: enable central logging
-    shell: echo "enable_central_logging:\""{{ enable_central_logging }}"\"" >> /etc/kolla/global.yml
+    shell: echo "enable_central_logging:" ""{{ enable_central_logging }}"" >> /etc/kolla/global.yml
   - name: deploy all-in-one
     command: kolla-ansible deploy
   
